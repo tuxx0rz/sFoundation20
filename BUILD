@@ -88,15 +88,6 @@ cc_library(
         "sFoundation/src-linux",
         ".",
     ],
-    copts = [
-        # When preprocessing, do not shorten system header paths with canonicalization.
-        "-fno-canonical-system-headers",
-        # Disable all warnings.
-        # librealsense2 produces a large number of warnings. Not all can blocked with -Wno- flags.
-        # So we need to use the heavy handed approach of disabling all warnings.
-        "-w",
-        "-Wno-error",
-    ],
     deps = [],
     data = ["sFoundation/MNuserDriver20.xml"],
     visibility = ["//visibility:public"],
